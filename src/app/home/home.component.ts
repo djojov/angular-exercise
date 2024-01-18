@@ -22,10 +22,10 @@ import { HousingLocation } from '../housinglocation';
       </form>
     </section>
     <section class="results">
-      <app-housing-location
-        *ngFor="let housingLocation of filteredHousingLocationList"
-        [housingLocation]="housingLocation"
-      ></app-housing-location>
+      @for (housingLocation of filteredHousingLocationList; track
+      housingLocation.id) {
+      <app-housing-location [housingLocation]="housingLocation" />
+      }
     </section>
   `,
   styleUrl: './home.component.css',
